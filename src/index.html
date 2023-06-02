@@ -2,9 +2,41 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Moddho Pay</title>
+    <style>
+      /* CSS styles for the buttons */
+      .window-controls {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      .window-controls button {
+        width: 35px;
+        height: 25px;
+        border: none;
+        background-color: #FDA058; /* Change the background color here */
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      #close-btn:hover {
+        background-color: #FF0000; /* Change the hover background color here */
+      }
+      #minimize-btn:hover {
+        background-color: #333; /* Change the hover background color here */
+      }
+    </style>
   </head>
   <body>
+    <div class="window-controls">
+      <button id="minimize-btn">-</button>
+      <button id="close-btn">x</button>
+    </div>
     <div id="root"></div>
   </body>
 </html>
+
+
+
+

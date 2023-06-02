@@ -1,9 +1,14 @@
 import React, { useState } from 'react'
-import {FaBox,FaBars,FaUserAlt,FaRegChartBar,FaCommentAlt,FaShoppingBag,FaThList} from 'react-icons/fa'
-import { AiOutlineQrcode,AiTwotoneSetting } from "react-icons/ai";
+import {FaBars,FaRegChartBar} from 'react-icons/fa'
+import {AiTwotoneSetting,AiFillPauseCircle } from "react-icons/ai";
+import { BiPaperPlane } from "react-icons/bi";
+import { GrMoney } from "react-icons/gr";
+import { TbTruckDelivery } from "react-icons/tb";
+import { MdGroupAdd } from "react-icons/md";
+import { MdOutlinePersonSearch } from "react-icons/md";
 import { NavLink } from 'react-router-dom'
 const SideBar = ({children}) => {
-    const[isOpen,setIsopen]=useState(false)
+    const[isOpen,setIsopen]=useState(true)
     const toggle=()=>setIsopen(!isOpen)
     const menuItem=[
         {
@@ -12,34 +17,35 @@ const SideBar = ({children}) => {
             icon:<FaRegChartBar/>
         },
         {
-            path:"/order",
-            name:"Orders",
-            icon:<FaBox/>
+            path:"/request",
+            name:"Request",
+            icon:<MdGroupAdd/>
         },
         {
-            path:"/product",
-            name:"Product",
-            icon:<FaShoppingBag/>
-        },
-        {
-            path:"/productList",
-            name:"Product List",
-            icon:<FaThList/>
+            path:"/pending",
+            name:"Pending",
+            icon:<AiFillPauseCircle/>
         } ,
         {
-            path:"/qrcode",
-            name:"QR Code",
-            icon:<AiOutlineQrcode/>
+            path:"/delivery",
+            name:"Delivery",
+            icon:<BiPaperPlane/>
+        },
+
+        {
+            path:"/money",
+            name:"Money",
+            icon:<GrMoney/>
         },
         {
-            path:"/table",
-            name:"Table",
-            icon:<FaShoppingBag/>
+            path:"/courier",
+            name:"Courier",
+            icon:<TbTruckDelivery/>
         },
         {
             path:"/customer",
             name:"Customer",
-            icon:<FaUserAlt/>
+            icon:<MdOutlinePersonSearch/>
         },
         {
             path:"/setting",
@@ -53,6 +59,7 @@ const SideBar = ({children}) => {
         <div  style={{width: isOpen ? "200px" : "50px"}} className="sidebar">
             <div className="top_section">
                 <h1 style={{display: isOpen ? "block" : "none"}} className="logo">Logo</h1>
+
                 <div style={{marginLeft: isOpen ? "50px" : "0px"}} className="bars">
                     <FaBars style={{color:'#FDA058'}} onClick={toggle}/>
                 </div>
